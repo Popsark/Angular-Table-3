@@ -1,0 +1,31 @@
+.addbtn{
+    background-color: rgb(120, 16, 180);
+    font-size: 20px; float:right; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+    color: antiquewhite; 
+    border:none;
+    padding: 10px;
+}
+.rmvbtn{
+    background-color: rgb(194, 22, 22);
+    font-size: 13px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+    color: antiquewhite; 
+    border:none;
+    padding: 10px;
+}
+.pagbtn{
+    background-color: rgb(231, 182, 21);
+    font-size: 13px; 
+    margin-bottom: 20px;
+    color: antiquewhite; 
+    border:none;
+    padding: 10px;
+    border: 1px solid black;
+}
+.title{
+    text-align: center;
+    color: blueviolet;
+}

@@ -1,0 +1,54 @@
+<h1 class="title"><b>Employees Table</b></h1>
+ 
+ <ng-container>
+    <button class="addbtn">Add</button>
+  </ng-container>
+  
+<table mat-table [dataSource]="data._embedded.employees" class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="birthDate">
+    <th mat-header-cell *matHeaderCellDef> Birth Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef> First Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef> Gender </th>
+    <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hireDate">
+    <th mat-header-cell *matHeaderCellDef> Hire Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.hireDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="remove">
+    <th mat-header-cell *matHeaderCellDef> Actions</th>
+    <td mat-cell *matCellDef ="let element"><button class="rmvbtn" (click)="removeRow(element.id)">Remove</button> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div class="mat-elevation-z8">
+  <button mat-button class="pagbtn" (click)="firstPage()">First Page</button>
+  <button mat-button class="pagbtn" [disabled]="!data?._links?.prev" (click)="prevPage()">Previous Page</button>
+  <button mat-button class="pagbtn" [disabled]="!data?._links?.next" (click)="nextPage()">Next Page</button>
+  <button mat-button class="pagbtn" (click)="lastPage()">Last Page</button>
+  {{data?.page?.number}}
+</div>
